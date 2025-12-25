@@ -1,11 +1,28 @@
 {
-  "files.watcherExclude": {
-    "**/routeTree.gen.ts": true
-  },
-  "search.exclude": {
-    "**/routeTree.gen.ts": true
-  },
-  "files.readonlyInclude": {
-    "**/routeTree.gen.ts": true
-  }
+	"files.watcherExclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"search.exclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"files.readonlyInclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"workbench.colorTheme": "Winter is Coming (Dark Blue)",
+	"editor.defaultFormatter": "biomejs.biome",
+	"biome.enabled": true,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	},
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[json, javascript, javascriptreact, typescript, typescriptreact]": {
+		"editor.tabSize": 2
+	},
+	"window.zoomLevel": 2,
+	"files.associations": {
+		".env*": "env"
+	}
 }
