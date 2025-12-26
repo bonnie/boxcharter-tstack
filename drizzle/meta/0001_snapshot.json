@@ -1,0 +1,806 @@
+{
+  "id": "73b38dc8-8c1e-4239-93c9-5f2423a5b2b3",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.charts": {
+      "name": "charts",
+      "schema": "",
+      "columns": {
+        "chartid": {
+          "name": "chartid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "author": {
+          "name": "author",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "composer": {
+          "name": "composer",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lyricist": {
+          "name": "lyricist",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lyricistsame": {
+          "name": "lyricistsame",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "originalkeycode": {
+          "name": "originalkeycode",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "printkeycode": {
+          "name": "printkeycode",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "maxpages": {
+          "name": "maxpages",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "minfontsize": {
+          "name": "minfontsize",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pagewidth": {
+          "name": "pagewidth",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pageheight": {
+          "name": "pageheight",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pageunits": {
+          "name": "pageunits",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdat": {
+          "name": "createdat",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "modifiedat": {
+          "name": "modifiedat",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "CURRENT_TIMESTAMP"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "charts_originalkeycode_fkey": {
+          "name": "charts_originalkeycode_fkey",
+          "tableFrom": "charts",
+          "tableTo": "keys",
+          "columnsFrom": [
+            "originalkeycode"
+          ],
+          "columnsTo": [
+            "keycode"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "charts_printkeycode_fkey": {
+          "name": "charts_printkeycode_fkey",
+          "tableFrom": "charts",
+          "tableTo": "keys",
+          "columnsFrom": [
+            "printkeycode"
+          ],
+          "columnsTo": [
+            "keycode"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.chords": {
+      "name": "chords",
+      "schema": "",
+      "columns": {
+        "chordid": {
+          "name": "chordid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "measureid": {
+          "name": "measureid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "beatindex": {
+          "name": "beatindex",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "notecode": {
+          "name": "notecode",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bassnotecode": {
+          "name": "bassnotecode",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "suffix": {
+          "name": "suffix",
+          "type": "varchar(8)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "chords_measureid_fkey": {
+          "name": "chords_measureid_fkey",
+          "tableFrom": "chords",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "measureid"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "chords_notecode_fkey": {
+          "name": "chords_notecode_fkey",
+          "tableFrom": "chords",
+          "tableTo": "notes",
+          "columnsFrom": [
+            "notecode"
+          ],
+          "columnsTo": [
+            "notecode"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "chords_bassnotecode_fkey": {
+          "name": "chords_bassnotecode_fkey",
+          "tableFrom": "chords",
+          "tableTo": "notes",
+          "columnsFrom": [
+            "bassnotecode"
+          ],
+          "columnsTo": [
+            "notecode"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.keys": {
+      "name": "keys",
+      "schema": "",
+      "columns": {
+        "keycode": {
+          "name": "keycode",
+          "type": "varchar(3)",
+          "primaryKey": true,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "keycode_id": {
+          "name": "keycode_id",
+          "nullsNotDistinct": false,
+          "columns": [
+            "keycode"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.lyrics": {
+      "name": "lyrics",
+      "schema": "",
+      "columns": {
+        "lyricid": {
+          "name": "lyricid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "measureid": {
+          "name": "measureid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "verseindex": {
+          "name": "verseindex",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lyrictext": {
+          "name": "lyrictext",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "placeAtEnd": {
+          "name": "placeAtEnd",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lyrics_measureid_fkey": {
+          "name": "lyrics_measureid_fkey",
+          "tableFrom": "lyrics",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "measureid"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.measures": {
+      "name": "measures",
+      "schema": "",
+      "columns": {
+        "measureid": {
+          "name": "measureid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "sectionid": {
+          "name": "sectionid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "index": {
+          "name": "index",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "beatspermeasure": {
+          "name": "beatspermeasure",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "measures_sectionid_fkey": {
+          "name": "measures_sectionid_fkey",
+          "tableFrom": "measures",
+          "tableTo": "sections",
+          "columnsFrom": [
+            "sectionid"
+          ],
+          "columnsTo": [
+            "sectionid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.notes": {
+      "name": "notes",
+      "schema": "",
+      "columns": {
+        "notecode": {
+          "name": "notecode",
+          "type": "varchar(2)",
+          "primaryKey": true,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "notecode_id": {
+          "name": "notecode_id",
+          "nullsNotDistinct": false,
+          "columns": [
+            "notecode"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.repeats": {
+      "name": "repeats",
+      "schema": "",
+      "columns": {
+        "repeatid": {
+          "name": "repeatid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "sectionid": {
+          "name": "sectionid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "repeatstart": {
+          "name": "repeatstart",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "repeatend": {
+          "name": "repeatend",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ending1Start": {
+          "name": "ending1Start",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ending2Start": {
+          "name": "ending2Start",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ending2End": {
+          "name": "ending2End",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "repeats_sectionid_fkey": {
+          "name": "repeats_sectionid_fkey",
+          "tableFrom": "repeats",
+          "tableTo": "sections",
+          "columnsFrom": [
+            "sectionid"
+          ],
+          "columnsTo": [
+            "sectionid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "repeats_repeatstart_fkey": {
+          "name": "repeats_repeatstart_fkey",
+          "tableFrom": "repeats",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "repeatstart"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "repeats_repeatend_fkey": {
+          "name": "repeats_repeatend_fkey",
+          "tableFrom": "repeats",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "repeatend"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "repeats_ending1start_fkey": {
+          "name": "repeats_ending1start_fkey",
+          "tableFrom": "repeats",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "ending1Start"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "repeats_ending2start_fkey": {
+          "name": "repeats_ending2start_fkey",
+          "tableFrom": "repeats",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "ending2Start"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "repeats_ending2end_fkey": {
+          "name": "repeats_ending2end_fkey",
+          "tableFrom": "repeats",
+          "tableTo": "measures",
+          "columnsFrom": [
+            "ending2End"
+          ],
+          "columnsTo": [
+            "measureid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.scale_notes": {
+      "name": "scale_notes",
+      "schema": "",
+      "columns": {
+        "scalenoteid": {
+          "name": "scalenoteid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "keycode": {
+          "name": "keycode",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "notecode": {
+          "name": "notecode",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "scaledegree": {
+          "name": "scaledegree",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "scale_notes_keycode_fkey": {
+          "name": "scale_notes_keycode_fkey",
+          "tableFrom": "scale_notes",
+          "tableTo": "keys",
+          "columnsFrom": [
+            "keycode"
+          ],
+          "columnsTo": [
+            "keycode"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "scale_notes_notecode_fkey": {
+          "name": "scale_notes_notecode_fkey",
+          "tableFrom": "scale_notes",
+          "tableTo": "notes",
+          "columnsFrom": [
+            "notecode"
+          ],
+          "columnsTo": [
+            "notecode"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "keycode_notecode": {
+          "name": "keycode_notecode",
+          "nullsNotDistinct": false,
+          "columns": [
+            "keycode",
+            "notecode"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.sections": {
+      "name": "sections",
+      "schema": "",
+      "columns": {
+        "sectionid": {
+          "name": "sectionid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "chartid": {
+          "name": "chartid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "index": {
+          "name": "index",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sectionname": {
+          "name": "sectionname",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sectiondesc": {
+          "name": "sectiondesc",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "beatspermeasure": {
+          "name": "beatspermeasure",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "versecount": {
+          "name": "versecount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pickupmeasurebeats": {
+          "name": "pickupmeasurebeats",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "sections_chartid_fkey": {
+          "name": "sections_chartid_fkey",
+          "tableFrom": "sections",
+          "tableTo": "charts",
+          "columnsFrom": [
+            "chartid"
+          ],
+          "columnsTo": [
+            "chartid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.usercharts": {
+      "name": "usercharts",
+      "schema": "",
+      "columns": {
+        "userchartid": {
+          "name": "userchartid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "userid": {
+          "name": "userid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "chartid": {
+          "name": "chartid",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "permissions": {
+          "name": "permissions",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "usercharts_userid_fkey": {
+          "name": "usercharts_userid_fkey",
+          "tableFrom": "usercharts",
+          "tableTo": "users",
+          "columnsFrom": [
+            "userid"
+          ],
+          "columnsTo": [
+            "userid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "usercharts_chartid_fkey": {
+          "name": "usercharts_chartid_fkey",
+          "tableFrom": "usercharts",
+          "tableTo": "charts",
+          "columnsFrom": [
+            "chartid"
+          ],
+          "columnsTo": [
+            "chartid"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.users": {
+      "name": "users",
+      "schema": "",
+      "columns": {
+        "userid": {
+          "name": "userid",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "passwordhash": {
+          "name": "passwordhash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "passwordsalt": {
+          "name": "passwordsalt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "firstname": {
+          "name": "firstname",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lastname": {
+          "name": "lastname",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "users_email_key": {
+          "name": "users_email_key",
+          "nullsNotDistinct": false,
+          "columns": [
+            "email"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
