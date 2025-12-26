@@ -13,21 +13,34 @@ To save time for CI and not bother to commit if lint / ts checks fail.
 This example requires Supabase configuration. The `.env` file contains the necessary environment variables:
 
 ```env
-SUPABASE_URL=your-project-url
-SUPABASE_ANON_KEY=your-anon-key
+DATABASE_URL=
+SUPABASE_URL=
+SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_ANON_KEY=
 ```
 
 ### Project ID
 
-https://supabase.com/dashboard/project/pmoonraylkujkuzddpvc/settings/general
+settings -> general
 
-### Project URL
+### Database URL
 
-https://supabase.com/dashboard/project/pmoonraylkujkuzddpvc/settings/general?showConnect=true
+`https://supabase.com/dashboard/project/`[your project id]`/settings/general?showConnect=true`
 
-### Anonyomous key
+### Supabase URL
 
-https://supabase.com/dashboard/project/[your project id]/settings/api-keys/legacy
+`https://`[your project id]`.supabase.co`
+
+### Supabase publishable key
+
+`https://supabase.com/dashboard/project/`[your project id]`/settings/api-keys`
+
+## Generate and seed db
+
+```sh
+npm run db:push
+npm run db:seed
+```
 
 ## Install depencencies
 
