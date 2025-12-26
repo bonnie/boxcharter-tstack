@@ -17,6 +17,7 @@ const addNotes = async () => {
     });
   });
   allNotes.push("%");
+  allNotes.push("NC");
   if (VERBOSE) console.log("**ADDING NOTES**", allNotes);
 
   for (const noteName of allNotes) {
