@@ -9,14 +9,15 @@
 }
 
 .authBox {
-  padding: var(--padding-md);
+  padding: var(--padding-lg);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-card);
 }
 
 .form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
   gap: var(--padding-lg);
 }
 
@@ -32,7 +33,6 @@
 
 .label {
   justify-self: end;
-  width: 100%;
   text-align: end;
 }
 
