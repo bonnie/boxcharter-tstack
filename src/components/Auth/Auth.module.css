@@ -1,0 +1,51 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  /* background-color: "white"; */
+  display: flex;
+  justify-items: start;
+  justify-self: center;
+  padding: var(--padding-md);
+}
+
+.authBox {
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-lg);
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--padding-md);
+}
+
+.label {
+  justify-self: end;
+  width: 100%;
+  text-align: end;
+}
+
+.input {
+  padding: var(--padding-md) var(--padding-lg);
+  width: 24ch;
+  border-radius: var(--border-radius-sm);
+  border: var(--color-gray-700) var(--border-width-sm) solid;
+  background-color: var(--color-gray-100);
+}
+
+.button {
+  width: 24ch;
+  border-radius: var(--border-radius-sm);
+  padding: var(--padding-sm) 0;
+  text-transform: uppercase;
+}

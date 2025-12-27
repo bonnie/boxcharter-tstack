@@ -1,6 +1,8 @@
 /**** START: Josh Comeau's global styles ****/
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -24,18 +26,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -43,14 +58,20 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -111,12 +132,29 @@ a {
   --border-width-heavy: 4px;
 
   /* from https://github.com/joy-of-react/project-blog/blob/stretch-not-found/src/constants.js */
-  --shadow-medium: 0px 1px 2px hsla(207, 35%, 20%, 0.2),
-    0px 2px 4px hsla(207, 35%, 20%, 0.2), 0px 4px 8px hsla(207, 35%, 20%, 0.2),
-    0px 8px 16px hsla(207, 35%, 20%, 0.2);
+  --shadow-card:
+    0px 1px 2px hsla(0, 35%, 20%, 0.2), 0px 2px 4px hsla(0, 35%, 20%, 0.2),
+    0px 4px 8px hsla(0, 35%, 20%, 0.2), 0px 8px 16px hsla(0, 35%, 20%, 0.2);
+
+  --shadow-dialog:
+    0px 1px 2px hsl(0, 60% 50% / 0.25), 0px 3px 6px hsl(0, 60% 50% / 0.25),
+    0px 9px 18px hsl(0, 60% 50% / 0.25), 0px 18px 36px hsl(0, 60% 50% / 0.25),
+    0px 54px 108px hsl(0, 60% 50% / 0.25);
 
   /* widths and heights */
   --max-width: 93.75rem;
+
+  --padding-sm: 0.25rem;
+  --padding-md: 0.5rem;
+  --padding-lg: 1rem;
+
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
 
   --width-widget: calc(940rem / 16);
   --header-height: 4rem;
@@ -146,7 +184,12 @@ body {
   color: var(--color-text);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-display);
 }
 
@@ -175,7 +218,7 @@ h6 {
 }
 
 strong {
-  font-family: var(--font-family-sans-bold)
+  font-family: var(--font-family-sans-bold);
 }
 
 .theme-light {

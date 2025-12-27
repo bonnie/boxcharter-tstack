@@ -18,7 +18,7 @@ const logoutFn = createServerFn().handler(async () => {
   });
 });
 
-export const Route = createFileRoute("/logout")({
+export const Route = createFileRoute("/sign-out")({
   preload: false,
   loader: () => logoutFn(),
 });

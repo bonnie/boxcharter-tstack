@@ -1,6 +1,6 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { createServerFn, useServerFn } from "@tanstack/react-start";
-import { Auth } from "../components/Auth";
+import { Auth } from "../components/Auth/Auth";
 import { useMutation } from "../hooks/useMutation";
 import { getSupabaseServerClient } from "../utils/supabase";
 
@@ -27,7 +27,7 @@ export const signupFn = createServerFn({ method: "POST" })
     });
   });
 
-export const Route = createFileRoute("/signup")({
+export const Route = createFileRoute("/sign-up")({
   component: SignupComp,
 });
 
