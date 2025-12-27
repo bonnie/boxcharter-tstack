@@ -1,24 +1,19 @@
 @font-face {
-    font-family: 'Domine';
-    font-weight: '700';
-    font-display: swap;
-    src: url(/fonts/Domine-700.woff2)
+  font-family: "Domine";
+  font-weight: "700";
+  font-display: swap;
+  src: url(/fonts/Domine-700.woff2);
 }
 
 @font-face {
-    font-family: 'Open Sans Condensed';
-    font-display: swap;
-    src: url(/fonts/Open-Sans-Condensed.woff2)
+  font-family: "Open Sans Condensed";
+  font-weight: normal;
+  font-display: swap;
+  src: url(/fonts/Open-Sans-Condensed.woff2);
 }
 
 @font-face {
-    font-family: 'Open Sans 400';
-    font-display: swap;
-    src: url(/fonts/Open-Sans-400.woff2)
-}
-
-@font-face {
-    font-family: 'Open Sans 800';
-    font-display: swap;
-    src: url(/fonts/Open-Sans-800.woff2)
+  font-family: "Open Sans";
+  font-display: swap;
+  src: url(/fonts/Open-Sans-Variable.woff2);
 }

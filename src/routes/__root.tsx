@@ -54,6 +54,10 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: fontsCss },
+      // {
+      //   rel: "stylesheet",
+      //   href: "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap",
+      // },
       {
         rel: "icon",
         type: "image/png",

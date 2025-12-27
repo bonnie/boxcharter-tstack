@@ -1,3 +1,4 @@
+import Button from "../Button";
 import styles from "./Auth.module.css";
 
 export function Auth({
@@ -22,35 +23,32 @@ export function Auth({
           }}
           className={styles.form}
         >
-          <div className={styles.inputWrapper}>
-            <label htmlFor="email" className={styles.label}>
-              email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className={styles.input}
-            />
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="password" className={styles.label}>
-              password
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              className={styles.input}
-            />
-          </div>
-          <button
+          <label htmlFor="email" className={styles.label}>
+            email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            className={styles.input}
+          />
+          <label htmlFor="password" className={styles.label}>
+            password
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            className={styles.input}
+          />
+          <Button
             type="submit"
             className={styles.button}
             disabled={status === "pending"}
+            isLoading={status === "pending"}
           >
-            {status === "pending" ? "..." : actionText}
-          </button>
+            {actionText}
+          </Button>
           {afterSubmit ? afterSubmit : null}
         </form>
       </div>

@@ -1,11 +1,11 @@
 .wrapper {
   position: fixed;
   inset: 0;
-  /* background-color: "white"; */
   display: flex;
   justify-items: start;
   justify-self: center;
   padding: var(--padding-md);
+  --input-width: 48ch;
 }
 
 .authBox {
@@ -15,19 +15,20 @@
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--padding-lg);
 }
 
-.inputWrapper {
+/* .inputWrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: var(--padding-md);
-}
+  flex-shrink: 0;
+} */
 
 .label {
   justify-self: end;
@@ -37,15 +38,14 @@
 
 .input {
   padding: var(--padding-md) var(--padding-lg);
-  width: 24ch;
+  width: var(--input-width);
   border-radius: var(--border-radius-sm);
   border: var(--color-gray-700) var(--border-width-sm) solid;
   background-color: var(--color-gray-100);
 }
 
 .button {
-  width: 24ch;
-  border-radius: var(--border-radius-sm);
-  padding: var(--padding-sm) 0;
-  text-transform: uppercase;
+  width: var(--input-width);
+  justify-self: end;
+  grid-column: 1 / span 2;
 }

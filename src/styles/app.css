@@ -89,11 +89,16 @@ a {
 }
 
 :root {
-  --font-family-display: "Domine";
+  --font-family-display: "Domine", Georgia, serif;
 
-  --font-family-sans: "Open Sans 400";
-  --font-family-sans-bold: "Open Sans 800";
-  --font-family-sans-condensed: "Open Sans Condensed";
+  --font-family-sans: "Open Sans", Futura, Helvetica, Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --font-family-sans-condensed:
+    "Open Sans Condensed", Futura, Helvetica, Arial, sans-serif;
 
   --color-secondary-300: hsl(34, 70%, 55%);
   --color-secondary-500: hsl(26, 66%, 46%);
@@ -126,10 +131,6 @@ a {
   --toastify-color-error: var(--color-theme-red);
   --toastify-font-family: var(--font-family-sans);
   --toastify-toast-width: 40rem;
-
-  --border-radius: 8px;
-  --border-width: 2px;
-  --border-width-heavy: 4px;
 
   /* from https://github.com/joy-of-react/project-blog/blob/stretch-not-found/src/constants.js */
   --shadow-card:
@@ -218,7 +219,8 @@ h6 {
 }
 
 strong {
-  font-family: var(--font-family-sans-bold);
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-bold);
 }
 
 .theme-light {
