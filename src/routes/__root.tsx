@@ -9,8 +9,8 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { createServerFn } from "@tanstack/react-start";
 import type * as React from "react";
-import { DefaultCatchBoundary } from "../components/DefaultCatchBoundary";
-import { NotFound } from "../components/NotFound";
+import { DefaultCatchBoundary } from "../components/DefaultCatchBoundary/DefaultCatchBoundary";
+import { NotFound } from "../components/NotFound/NotFound";
 import appCss from "../styles/app.css?url";
 import fontsCss from "../styles/fonts.css?url";
 import { seo } from "../utils/seo";
@@ -54,6 +54,10 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: fontsCss },
+      // {
+      //   rel: "stylesheet",
+      //   href: "https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap&display=swap",
+      // },
       {
         rel: "icon",
         type: "image/png",
@@ -120,10 +124,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             {user ? (
               <>
                 <span className="mr-2">{user.email}</span>
-                <Link to="/logout">Logout</Link>
+                <Link to="/sign-out">Logout</Link>
               </>
             ) : (
-              <Link to="/login">Login</Link>
+              <Link to="/sign-in">Login</Link>
             )}
           </div>
         </div>

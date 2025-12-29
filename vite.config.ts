@@ -16,4 +16,13 @@ export default defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+  css: {
+    transformer: "lightningcss",
+    lightningcss: {
+      cssModules: {},
+    },
+  },
+  build: {
+    cssMinify: "lightningcss",
+  },
 });

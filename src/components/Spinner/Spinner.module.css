@@ -1,0 +1,17 @@
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  display: grid;
+  place-content: center;
+}
+
+.spinner {
+  animation: spin infinite linear 2s;
+}

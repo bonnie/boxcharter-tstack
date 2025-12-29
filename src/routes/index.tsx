@@ -15,10 +15,20 @@ function Home() {
         <strong>Beautiful</strong> box charts (measures with chords and lyrics)
         made <strong>easy</strong>
       </p>
-      <h3 style={{ fontFamily: "var(--font-family-sans-bold)" }}>
+      <h3
+        style={{
+          fontFamily: "var(--font-family-sans)",
+          fontWeight: "var(--font-weight-extrabold)",
+        }}
+      >
         This is a title
       </h3>
-      <p style={{ fontFamily: "var(--font-family-sans-condensed)" }}>
+      <p
+        style={{
+          fontFamily: "var(--font-family-sans-condensed)",
+          fontVariationSettings: '"wdth" 75',
+        }}
+      >
         this is condensed
       </p>
     </div>
