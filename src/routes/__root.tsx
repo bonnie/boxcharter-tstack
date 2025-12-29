@@ -56,7 +56,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: fontsCss },
       // {
       //   rel: "stylesheet",
-      //   href: "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap",
+      //   href: "https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap&display=swap",
       // },
       {
         rel: "icon",

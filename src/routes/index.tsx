@@ -23,7 +23,12 @@ function Home() {
       >
         This is a title
       </h3>
-      <p style={{ fontFamily: "var(--font-family-sans-condensed)" }}>
+      <p
+        style={{
+          fontFamily: "var(--font-family-sans-condensed)",
+          fontVariationSettings: '"wdth" 75',
+        }}
+      >
         this is condensed
       </p>
     </div>
