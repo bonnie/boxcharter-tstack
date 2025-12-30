@@ -1,4 +1,6 @@
 /// <reference types="vite/client" />
+
+import { User } from "@supabase/supabase-js";
 import {
   createRootRoute,
   HeadContent,
@@ -9,24 +11,23 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { createServerFn } from "@tanstack/react-start";
 import type * as React from "react";
-import { DefaultCatchBoundary } from "../components/DefaultCatchBoundary/DefaultCatchBoundary";
-import { NotFound } from "../components/NotFound/NotFound";
-import appCss from "../styles/app.css?url";
-import fontsCss from "../styles/fonts.css?url";
-import { seo } from "../utils/seo";
-import { getSupabaseServerClient } from "../utils/supabase";
+import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary/DefaultCatchBoundary";
+import Header from "~/components/Header";
+import { NotFound } from "~/components/NotFound/NotFound";
+import appCss from "~/styles/app.css?url";
+import fontsCss from "~/styles/fonts.css?url";
+import { seo } from "~/utils/seo";
+import { getSupabaseServerClient } from "~/utils/supabase";
 
 const fetchUser = createServerFn({ method: "GET" }).handler(async () => {
   const supabase = getSupabaseServerClient();
   const { data, error: _error } = await supabase.auth.getUser();
 
-  if (!data.user?.email) {
+  if (!data.user?.id) {
     return null;
   }
 
-  return {
-    email: data.user.email,
-  };
+  return data.user;
 });
 
 export const Route = createRootRoute({
@@ -102,35 +103,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="p-2 flex gap-2 text-lg">
-          <Link
-            to="/"
-            activeProps={{
-              className: "font-bold",
-            }}
-            activeOptions={{ exact: true }}
-          >
-            Home
-          </Link>{" "}
-          <Link
-            to="/posts"
-            activeProps={{
-              className: "font-bold",
-            }}
-          >
-            Posts
-          </Link>
-          <div className="ml-auto">
-            {user ? (
-              <>
-                <span className="mr-2">{user.email}</span>
-                <Link to="/sign-out">Logout</Link>
-              </>
-            ) : (
-              <Link to="/sign-in">Login</Link>
-            )}
-          </div>
-        </div>
+        <Header user={user} />
         <hr />
         {children}
         <TanStackRouterDevtools position="bottom-right" />
