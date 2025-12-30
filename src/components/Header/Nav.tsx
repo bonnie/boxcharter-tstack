@@ -19,8 +19,8 @@ function Nav({ user, className, handleClick }: NavProps) {
   return (
     // wrapper is styled by parent -- it will be different for mobile nav vs desktop nav
     <RadixNav.Root className={className}>
-      <NavLink href="/examples" location={location} handleClick={handleClick}>
-        Examples
+      <NavLink href="/about" location={location} handleClick={handleClick}>
+        About
       </NavLink>
       {user?.id ? (
         <>
