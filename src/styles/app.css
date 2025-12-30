@@ -88,7 +88,21 @@ a {
   text-decoration: none;
 }
 
+@keyframes slide-down-and-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root {
+  --animations-slide-down-and-fade: slide-down-and-fade 400ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+
   --font-family-display: "Domine", Georgia, serif;
 
   --font-family-sans: "Open Sans", Futura, Helvetica, Arial, sans-serif;
@@ -96,9 +110,6 @@ a {
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-
-  --font-family-sans-condensed:
-    "Open Sans Condensed", Futura, Helvetica, Arial, sans-serif;
 
   --color-secondary-300: hsl(34, 70%, 55%);
   --color-secondary-500: hsl(26, 66%, 46%);
@@ -118,6 +129,7 @@ a {
   --color-gray-500: hsl(240, 4%, 46%);
   --color-gray-600: hsl(240, 5%, 34%);
   --color-gray-700: hsl(240, 5%, 26%);
+  --color-gray-800: hsl(240, 5%, 18%);
   --color-gray-900: hsl(240, 6%, 10%);
 
   --color-gray-100-90: hsla(240, 5%, 96%, 0.9);
@@ -145,9 +157,12 @@ a {
   /* widths and heights */
   --max-width: 93.75rem;
 
-  --padding-sm: 0.25rem;
-  --padding-md: 0.5rem;
-  --padding-lg: 1rem;
+  --space-xs: 0.125rem;
+  --space-sm: 0.25rem;
+  --space-md: 0.5rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-xxl: 2rem;
 
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.5rem;
@@ -157,7 +172,7 @@ a {
   --border-width-md: 2px;
   --border-width-lg: 4px;
 
-  --width-widget: calc(940rem / 16);
+  /* --width-widget: calc(940rem / 16);
   --header-height: 4rem;
   --footer-spacer-height: 32px;
   --wrapper-padding: 16px;
@@ -165,14 +180,17 @@ a {
   --view-width-minus-scrollbar: calc(100vw - (100vw - 100%));
   --main-column-width: min(var(--view-width-minus-scrollbar), var(--max-width));
   --main-column-usable-width: calc(
-    var(--main-column-width) - 2 * var(--wrapper-padding)
+    var(--main-column-width) -
+    2 *
+    var(--wrapper-padding)
   );
   --main-buffer-top: 16px;
   --main-margin-top: calc(var(--header-height) + var(--main-buffer-top));
   --min-main-height-without-footer: calc(100vh - var(--main-margin-top));
   --min-main-height: calc(
-    var(--min-main-height-without-footer) - var(--footer-height)
-  );
+    var(--min-main-height-without-footer) -
+    var(--footer-height)
+  ); */
 }
 
 html,
