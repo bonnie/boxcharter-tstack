@@ -1,25 +1,22 @@
 .wrapper {
-  display: "flex";
-  flex-direction: "column";
-  align-items: "center";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  top: 0;
-  left: 0;
+  inset: 0;
+  height: 2rem;
+  padding: var(--space-xl);
 
-  height: "6rem";
-  width: "fullWidthMinusScrollbar";
-
-  padding: 4;
+  border-bottom: var(--color-gray-500) solid var(--border-width-md);
 }
 
 .header {
-  display: "flex";
-  justify-content: "space-between";
-  align-items: "center";
-  gap: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
 
   width: 100%;
-  max-width: "wideScreen";
   height: 100%;
 }
 

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "../images/boxcharter-logo.svg";
+import Logo from "~/components/Logo";
 export const Route = createFileRoute("/")({
   component: Home,
 });
@@ -7,10 +7,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="p-2">
-      <img
-        src={logo}
-        alt="the letters B, O, and X in horizontal, abutting squares, with the word 'charter' beneath"
-      />
+      <Logo />
       <p>
         <strong>Beautiful</strong> box charts (measures with chords and lyrics)
         made <strong>easy</strong>
