@@ -111,6 +111,8 @@ a {
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
 
+  --font-size-lg: 1.25rem;
+
   --color-secondary-300: hsl(34, 70%, 55%);
   --color-secondary-500: hsl(26, 66%, 46%);
   --color-secondary-800: hsl(9, 66%, 46%);

@@ -13,18 +13,16 @@ function Header({ user }: HeaderProps) {
   const initialTheme = "light";
 
   return (
-    <div className={styles.wrapper}>
-      <header className={styles.header}>
-        <Link className={styles.logo} to="/">
-          <Logo />
-        </Link>
-        <DesktopNav
-          className={styles.desktop}
-          initialTheme={initialTheme}
-          user={user}
-        />
-      </header>
-    </div>
+    <header className={styles.header}>
+      <Link to="/">
+        <Logo className={styles.logo} />
+      </Link>
+      <DesktopNav
+        className={styles.desktop}
+        initialTheme={initialTheme}
+        user={user}
+      />
+    </header>
   );
 }
 

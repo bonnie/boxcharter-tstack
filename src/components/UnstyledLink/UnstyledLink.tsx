@@ -1,6 +1,5 @@
 import { Link, type LinkProps } from "@tanstack/react-router";
 import clsx from "clsx";
-import type React from "react";
 import type { StyledReactProps } from "~/types";
 import styles from "./UnstyledLink.module.css";
 

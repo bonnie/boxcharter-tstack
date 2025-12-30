@@ -2,7 +2,7 @@
   background-color: transparent;
 
   font-family: var(--font-family-display);
-  font-size: xl;
+  font-size: var(--font-size-lg);
   font-weight: bold;
   /* color: text.featured; */
 
