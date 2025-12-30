@@ -1,0 +1,17 @@
+.headerIcon {
+  height: 100%;
+  aspect-ratio: 1;
+
+  transition: transform 0.25s;
+
+  /* slight glow so it's not so purple-on-purple in dark mode 
+      _dark: {
+        filter: "drop-shadow(0 0 0.2rem white)",
+      } */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .headerIcon:hover {
+    transform: "scale(1.05)",;
+  }
+}

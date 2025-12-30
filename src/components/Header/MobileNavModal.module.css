@@ -1,0 +1,75 @@
+.overlay {
+  position: "fixed";
+  inset: "0"; /* that means the whole dang screen */
+  background-color: "overlay";
+  animation: "fadeIn 300ms ease-in both"; /* "var(--fade-in-duration)" */
+
+  z-index: 3,; /* to cover &#*( color mode toggle */
+}
+
+.content {
+  --overfill: 16px; /* for overshoot on bezier curve */
+  --slide-in-duration: 500ms;
+  --slide-in-completion: calc(
+    var(--slide-in-duration) +
+    var(--fade-in-duration) -
+    100ms
+  );
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  /* background-color: var(--color-mobile-menu-background);
+        color: var(--color-text); */
+  width: calc(300px + var(--overfill));
+  margin-right: calc(var(--overfill) * -1);
+  height: 100vh;
+  padding: var(--space-xl) var(--space-xxl);
+
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+
+  z-index: 4,; /* to cover overlay */
+}
+
+header {
+  display: flex;
+  justify-content: "flex-end";
+  align-items: "center";
+  margin-bottom: var(--space-md);
+  gap: var(--space-lg);
+}
+
+/* // colorModeToggle {
+  //   base: {
+  //     display: "inherit";
+    //   };
+    //   md: {
+  //     display: "none";
+    //   };
+    // }); */
+
+.close {
+  position: relative;
+  float: right;
+}
+
+.nav {
+  display: flex;
+  flex-direction: "column";
+  align-items: "flex-start";
+  justify-items: "start";
+  gap: var(--space-lg);
+}
+
+.authButtons {
+  margin-bottom: var(--space-lg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .content {
+    animation: slideInRight cubic-bezier(0, 0.6, 0.32, 1.06) both;
+    animation-duration: calc(var(--slide-in-duration) - 100ms);
+    animation-delay: var(--fade-in-duration);
+  }
+}

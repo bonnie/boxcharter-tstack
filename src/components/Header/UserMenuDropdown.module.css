@@ -1,0 +1,34 @@
+.username {
+  color: var(--color-text-featured);
+}
+
+.item {
+  width: 100%;
+  outline: "none";
+  padding: 0;
+  margin: 0;
+}
+
+.item:disabled {
+  pointer-events: "none";
+  cursor: "default";
+}
+
+.item:not([data-disabled]) {
+  padding: var(--space-sm);
+  border-radius: "sm";
+}
+
+.item:hover,
+.item:focus {
+  background-color: var(--color-background-highlight);
+  color: var(--color-text-highlight);
+}
+
+.separator {
+  width: 100%;
+  align-self: "center";
+  height: "1px";
+  margin: var(--spacer-md) 2;
+  background-color: "separator";
+}

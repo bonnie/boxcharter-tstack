@@ -1,4 +1,9 @@
+// TODO:
+//   style confirmation email from Supabase
+//   warn about confirmation email from Supabase
+
 import Button from "../Button";
+import Card from "../Card";
 import styles from "./Auth.module.css";
 
 export function Auth({
@@ -13,8 +18,8 @@ export function Auth({
   afterSubmit?: React.ReactNode;
 }) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.authBox}>
+    <Card>
+      <div className={styles.wrapper}>
         <h1>{actionText}</h1>
         <form
           onSubmit={(e) => {
@@ -41,6 +46,7 @@ export function Auth({
             id="password"
             className={styles.input}
           />
+          <div></div>
           <Button
             type="submit"
             className={styles.button}
@@ -52,7 +58,7 @@ export function Auth({
           {afterSubmit ? afterSubmit : null}
         </form>
       </div>
-    </div>
+    </Card>
   );
 }
 

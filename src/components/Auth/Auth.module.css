@@ -1,35 +1,16 @@
 .wrapper {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-items: start;
-  justify-self: center;
-  padding: var(--padding-md);
-  --input-width: 48ch;
-}
-
-.authBox {
-  padding: var(--padding-lg);
+  padding: var(--space-lg);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-card);
+  --input-width: 48ch;
 }
 
 .form {
   display: grid;
   grid-template-columns: min-content 1fr;
   align-items: center;
-  gap: var(--padding-lg);
+  gap: var(--space-lg);
 }
-
-/* .inputWrapper {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--padding-md);
-  flex-shrink: 0;
-} */
 
 .label {
   justify-self: end;
@@ -37,7 +18,7 @@
 }
 
 .input {
-  padding: var(--padding-md) var(--padding-lg);
+  padding: var(--space-md) var(--space-lg);
   width: var(--input-width);
   border-radius: var(--border-radius-sm);
   border: var(--color-gray-700) var(--border-width-sm) solid;
@@ -45,7 +26,6 @@
 }
 
 .button {
-  width: var(--input-width);
+  width: 100%;
   justify-self: end;
-  grid-column: 1 / span 2;
 }

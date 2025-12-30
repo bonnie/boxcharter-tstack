@@ -1,0 +1,31 @@
+.wrapper {
+  background-color: transparent;
+
+  font-family: var(--font-family-display);
+  font-size: xl;
+  font-weight: bold;
+  /* color: text.featured; */
+
+  transition: text-decoration color 200ms;
+
+  padding: var(--space-xs);
+  animation: none;
+}
+
+.wrapper:hover {
+  transition: transform 100ms;
+  /* border-color: text.hover; */
+  /* color: text.hover; */
+}
+
+.inactive {
+  border-bottom: none;
+  transform: translateY(0);
+}
+
+.active {
+  /* border-color: text.featured; */
+  /* color: text.featured; */
+  border-bottom: var(--border-width-medium) solid;
+  border-top: var(--border-width-medium) solid;
+}

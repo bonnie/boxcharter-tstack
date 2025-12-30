@@ -1,0 +1,16 @@
+.wrapper {
+  display: "flex";
+  align-items: "center";
+  justify-content: "space-between";
+  gap: 6;
+
+  height: "100%";
+  width: "100%";
+}
+.authButtons {
+  /* // TODO: ARCHITECTURE These !s for "important" are pretty gross, but that's the only way to override the
+    //   AuthButtons display: "flex" 🙄 */
+  /* base: { display: "none!" };
+        sm: { display: "flex!" }; */
+  display: flex;
+}

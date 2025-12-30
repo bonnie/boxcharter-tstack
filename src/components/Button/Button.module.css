@@ -1,8 +1,8 @@
 .wrapper {
   border-radius: var(--border-radius-sm);
-  padding: var(--padding-md) var(--padding-lg);
+  padding: var(--space-md) var(--space-lg);
   text-transform: uppercase;
-  font-family: "Open Sans";
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-semibold);
   text-align: center;
   transition: background-color 0.5s;
@@ -14,7 +14,6 @@
 
 .wrapper:hover:not([disabled]) {
   background-color: var(--button-color-hover);
-  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   transition: background-color 0.25s;
 }
