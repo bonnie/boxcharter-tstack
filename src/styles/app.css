@@ -103,7 +103,7 @@ a {
   --animations-slide-down-and-fade: slide-down-and-fade 400ms
     cubic-bezier(0.16, 1, 0.3, 1);
 
-  --font-family-display: "Domine", Georgia, serif;
+  --font-family-display: "Gabarito", Georgia, serif;
 
   --font-family-sans: "Open Sans", Futura, Helvetica, Arial, sans-serif;
   --font-weight-normal: 400;
@@ -149,7 +149,7 @@ a {
     0px 1px 2px hsla(0, 35%, 20%, 0.2), 0px 2px 4px hsla(0, 35%, 20%, 0.2),
     0px 4px 8px hsla(0, 35%, 20%, 0.2), 0px 8px 16px hsla(0, 35%, 20%, 0.2);
 
-  --shadow-dialog:
+  --shadow-header:
     0px 1px 2px hsl(0, 60% 50% / 0.25), 0px 3px 6px hsl(0, 60% 50% / 0.25),
     0px 9px 18px hsl(0, 60% 50% / 0.25), 0px 18px 36px hsl(0, 60% 50% / 0.25),
     0px 54px 108px hsl(0, 60% 50% / 0.25);
