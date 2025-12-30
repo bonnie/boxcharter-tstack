@@ -1,10 +1,8 @@
 /// <reference types="vite/client" />
 
-import { User } from "@supabase/supabase-js";
 import {
   createRootRoute,
   HeadContent,
-  Link,
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
@@ -57,7 +55,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: fontsCss },
       // {
       //   rel: "stylesheet",
-      //   href: "https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap&display=swap",
+      //   href: "https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap",
       // },
       {
         rel: "icon",
@@ -104,7 +102,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Header user={user} />
-        <hr />
         {children}
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
