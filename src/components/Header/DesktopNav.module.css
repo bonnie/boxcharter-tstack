@@ -3,17 +3,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 6;
+  gap: var(--space-xxl);
 
   flex-grow: 1;
   height: 100%; /* this keeps images contained within header */
 }
 
 .nav {
-  display: "flex";
-  align-content: "flex-start";
-  align-items: "baseline";
-  gap: 8;
+  display: flex;
+  align-content: flex-start;
+  align-items: baseline;
+  gap: var(--space-xxl);
 
   flex-grow: 1; /* take up all the space between logo and user/dark mode stuff */
 }

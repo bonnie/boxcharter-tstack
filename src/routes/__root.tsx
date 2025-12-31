@@ -100,7 +100,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      {/* TODO: update when implementing theming */}
+      <body className="theme-light">
         <Header user={user} />
         {children}
         <TanStackRouterDevtools position="bottom-right" />

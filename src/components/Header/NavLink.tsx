@@ -20,28 +20,30 @@ type NavLinkProps = NavLinkBaseProps & {
 };
 
 type ExternalNavLinkProps = NavLinkBaseProps & {
-  location?: "";
+  location?: undefined;
   isExternal: boolean;
 };
 
 function NavLink({
-  location = "",
+  location,
   isExternal = false,
   href,
   className,
   handleClick,
   children,
 }: NavLinkProps | ExternalNavLinkProps) {
+  const isActive = !!location && location?.href === href;
+  const activeClass = isActive ? styles.active : styles.inactive;
+
   // https://www.radix-ui.com/docs/primitives/components/navigation-menu#with-client-side-routing
   return (
     <NavigationMenu.Item
-      className={clsx(className, styles.wrapper)}
-      // status={location.startsWith(href) ? "active" : "inactive"}
+      className={clsx(className, styles.wrapper, activeClass)}
       asChild
       onClick={handleClick}
     >
       <UnstyledListItem>
-        <NavigationMenu.Link asChild>
+        <NavigationMenu.Link asChild active={isActive}>
           {isExternal ? (
             <a href={href} target="_blank">
               {children}

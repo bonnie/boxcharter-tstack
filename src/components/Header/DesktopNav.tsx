@@ -1,7 +1,5 @@
 import type { User } from "@supabase/supabase-js";
 import clsx from "clsx";
-import React from "react";
-import { Route } from "~/routes";
 import ColorModeToggle from "../ColorModeToggle";
 import type { ColorModeTheme } from "../ColorModeToggle/types";
 import AuthButtons from "./AuthButtons";
@@ -19,7 +17,7 @@ function DesktopNav({ className, initialTheme, user }: DesktopNavProps) {
   return (
     <div className={clsx(styles.wrapper, className)}>
       <Nav className={styles.nav} user={user} />
-      <ColorModeToggle initialTheme={initialTheme} />
+      {/* <ColorModeToggle initialTheme={initialTheme} /> */}
       {user?.id ? <UserMenu user={user} /> : <AuthButtons />}
     </div>
   );

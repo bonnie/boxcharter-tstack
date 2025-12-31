@@ -15,6 +15,7 @@ type NavProps = {
 // advantage to having it together? less repeated code, I guess?
 function Nav({ user, className, handleClick }: NavProps) {
   const location = useLocation();
+  console.log("&*&*&*&*&* LOCATION", location);
 
   return (
     // wrapper is styled by parent -- it will be different for mobile nav vs desktop nav

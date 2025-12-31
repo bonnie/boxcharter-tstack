@@ -6,26 +6,22 @@
   font-weight: bold;
   /* color: text.featured; */
 
-  transition: text-decoration color 200ms;
+  transition: border-bottom-color 100ms;
 
   padding: var(--space-xs);
   animation: none;
+  border-bottom: var(--border-width-lg) solid transparent;
 }
 
 .wrapper:hover {
-  transition: transform 100ms;
+  transition: border-bottom-color 500ms;
+
+  border-bottom-color: var(--color-nav-highlight);
+
   /* border-color: text.hover; */
   /* color: text.hover; */
 }
 
-.inactive {
-  border-bottom: none;
-  transform: translateY(0);
-}
-
 .active {
-  /* border-color: text.featured; */
-  /* color: text.featured; */
-  border-bottom: var(--border-width-medium) solid;
-  border-top: var(--border-width-medium) solid;
+  border-bottom-color: var(--color-nav-active);
 }
